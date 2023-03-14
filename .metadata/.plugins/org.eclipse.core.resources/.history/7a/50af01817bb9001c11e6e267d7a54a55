@@ -1,0 +1,199 @@
+<xs:schema xmlns:tns="http://com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/" version="1.0">
+
+  <xs:element name="broadcast" type="tns:broadcast"/>
+
+  <xs:element name="broadcastResponse" type="tns:broadcastResponse"/>
+
+  <xs:element name="createUser" type="tns:createUser"/>
+
+  <xs:element name="createUserResponse" type="tns:createUserResponse"/>
+
+  <xs:element name="getBroadcasted" type="tns:getBroadcasted"/>
+
+  <xs:element name="getBroadcastedResponse" type="tns:getBroadcastedResponse"/>
+
+  <xs:element name="getChatUsers" type="tns:getChatUsers"/>
+
+  <xs:element name="getChatUsersResponse" type="tns:getChatUsersResponse"/>
+
+  <xs:element name="getCurrentSize" type="tns:getCurrentSize"/>
+
+  <xs:element name="getCurrentSizeResponse" type="tns:getCurrentSizeResponse"/>
+
+  <xs:element name="getMessageList" type="tns:getMessageList"/>
+
+  <xs:element name="getMessageListResponse" type="tns:getMessageListResponse"/>
+
+  <xs:element name="getRooms" type="tns:getRooms"/>
+
+  <xs:element name="getRoomsResponse" type="tns:getRoomsResponse"/>
+
+  <xs:element name="getUsers" type="tns:getUsers"/>
+
+  <xs:element name="getUsersResponse" type="tns:getUsersResponse"/>
+
+  <xs:element name="joinRoom" type="tns:joinRoom"/>
+
+  <xs:element name="joinRoomResponse" type="tns:joinRoomResponse"/>
+
+  <xs:element name="leaveRoom" type="tns:leaveRoom"/>
+
+  <xs:element name="leaveRoomResponse" type="tns:leaveRoomResponse"/>
+
+  <xs:element name="makeRoom" type="tns:makeRoom"/>
+
+  <xs:element name="makeRoomResponse" type="tns:makeRoomResponse"/>
+
+  <xs:element name="removeUser" type="tns:removeUser"/>
+
+  <xs:element name="removeUserResponse" type="tns:removeUserResponse"/>
+
+  <xs:complexType name="joinRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="joinRoomResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getUsers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getUsersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="messages" nillable="true" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sender" type="tns:user"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="leaveRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="leaveRoomResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="removeUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeUserResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="createUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createUserResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getRooms">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getRoomsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:chatroom"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="chatroom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="messages" nillable="true" type="tns:message"/>
+      <xs:element minOccurs="0" name="creator" type="tns:user"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="users" nillable="true" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMessageList">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getMessageListResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="broadcast">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="broadcastResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="makeRoom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="makeRoomResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentSize">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentSizeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBroadcasted">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBroadcastedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getChatUsers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getChatUsersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:user"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

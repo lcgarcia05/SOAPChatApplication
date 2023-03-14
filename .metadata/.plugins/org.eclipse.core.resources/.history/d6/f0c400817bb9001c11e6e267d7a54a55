@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ChatServerImplService" targetNamespace="http://com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://com/" schemaLocation="chatserverimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="joinRoom">
+    <wsdl:part name="parameters" element="tns:joinRoom">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsers">
+    <wsdl:part name="parameters" element="tns:getUsers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="leaveRoom">
+    <wsdl:part name="parameters" element="tns:leaveRoom">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUser">
+    <wsdl:part name="parameters" element="tns:removeUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeUserResponse">
+    <wsdl:part name="parameters" element="tns:removeUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="leaveRoomResponse">
+    <wsdl:part name="parameters" element="tns:leaveRoomResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUsersResponse">
+    <wsdl:part name="parameters" element="tns:getUsersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoomsResponse">
+    <wsdl:part name="parameters" element="tns:getRoomsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageListResponse">
+    <wsdl:part name="parameters" element="tns:getMessageListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createUser">
+    <wsdl:part name="parameters" element="tns:createUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRooms">
+    <wsdl:part name="parameters" element="tns:getRooms">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageList">
+    <wsdl:part name="parameters" element="tns:getMessageList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createUserResponse">
+    <wsdl:part name="parameters" element="tns:createUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="broadcastResponse">
+    <wsdl:part name="parameters" element="tns:broadcastResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="broadcast">
+    <wsdl:part name="parameters" element="tns:broadcast">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="makeRoom">
+    <wsdl:part name="parameters" element="tns:makeRoom">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrentSize">
+    <wsdl:part name="parameters" element="tns:getCurrentSize">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getChatUsersResponse">
+    <wsdl:part name="parameters" element="tns:getChatUsersResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="joinRoomResponse">
+    <wsdl:part name="parameters" element="tns:joinRoomResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBroadcasted">
+    <wsdl:part name="parameters" element="tns:getBroadcasted">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBroadcastedResponse">
+    <wsdl:part name="parameters" element="tns:getBroadcastedResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="makeRoomResponse">
+    <wsdl:part name="parameters" element="tns:makeRoomResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getChatUsers">
+    <wsdl:part name="parameters" element="tns:getChatUsers">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrentSizeResponse">
+    <wsdl:part name="parameters" element="tns:getCurrentSizeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ChatServer">
+    <wsdl:operation name="joinRoom">
+      <wsdl:input name="joinRoom" message="tns:joinRoom">
+    </wsdl:input>
+      <wsdl:output name="joinRoomResponse" message="tns:joinRoomResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input name="getUsers" message="tns:getUsers">
+    </wsdl:input>
+      <wsdl:output name="getUsersResponse" message="tns:getUsersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveRoom">
+      <wsdl:input name="leaveRoom" message="tns:leaveRoom">
+    </wsdl:input>
+      <wsdl:output name="leaveRoomResponse" message="tns:leaveRoomResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUser">
+      <wsdl:input name="removeUser" message="tns:removeUser">
+    </wsdl:input>
+      <wsdl:output name="removeUserResponse" message="tns:removeUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <wsdl:input name="createUser" message="tns:createUser">
+    </wsdl:input>
+      <wsdl:output name="createUserResponse" message="tns:createUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <wsdl:input name="getRooms" message="tns:getRooms">
+    </wsdl:input>
+      <wsdl:output name="getRoomsResponse" message="tns:getRoomsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageList">
+      <wsdl:input name="getMessageList" message="tns:getMessageList">
+    </wsdl:input>
+      <wsdl:output name="getMessageListResponse" message="tns:getMessageListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="broadcast">
+      <wsdl:input name="broadcast" message="tns:broadcast">
+    </wsdl:input>
+      <wsdl:output name="broadcastResponse" message="tns:broadcastResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeRoom">
+      <wsdl:input name="makeRoom" message="tns:makeRoom">
+    </wsdl:input>
+      <wsdl:output name="makeRoomResponse" message="tns:makeRoomResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentSize">
+      <wsdl:input name="getCurrentSize" message="tns:getCurrentSize">
+    </wsdl:input>
+      <wsdl:output name="getCurrentSizeResponse" message="tns:getCurrentSizeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBroadcasted">
+      <wsdl:input name="getBroadcasted" message="tns:getBroadcasted">
+    </wsdl:input>
+      <wsdl:output name="getBroadcastedResponse" message="tns:getBroadcastedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChatUsers">
+      <wsdl:input name="getChatUsers" message="tns:getChatUsers">
+    </wsdl:input>
+      <wsdl:output name="getChatUsersResponse" message="tns:getChatUsersResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChatServerImplServiceSoapBinding" type="tns:ChatServer">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="joinRoom">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="joinRoom">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="joinRoomResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getUsers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUsersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveRoom">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="leaveRoom">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="leaveRoomResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRooms">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRooms">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRoomsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createUser">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMessageList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="broadcast">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="broadcast">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="broadcastResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="makeRoom">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="makeRoom">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="makeRoomResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentSize">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrentSize">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrentSizeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBroadcasted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBroadcasted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBroadcastedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChatUsers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getChatUsers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getChatUsersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChatServerImplService">
+    <wsdl:port name="ChatServerImplPort" binding="tns:ChatServerImplServiceSoapBinding">
+      <soap:address location="http://localhost:8081/ChatService/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

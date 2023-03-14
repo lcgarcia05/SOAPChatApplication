@@ -1,0 +1,17 @@
+<xs:schema xmlns:tns="http://com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://com/" version="1.0">
+
+  <xs:element name="test" type="tns:test"/>
+
+  <xs:element name="testResponse" type="tns:testResponse"/>
+
+  <xs:complexType name="test">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>

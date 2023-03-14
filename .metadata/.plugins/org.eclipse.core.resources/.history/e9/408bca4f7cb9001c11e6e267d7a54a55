@@ -1,0 +1,19 @@
+package com;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+public interface ChatServer {
+	
+	@WebMethod
+	void test(String name);
+	
+	@WebMethod
+	int[] mergeSort();
+	
+
+}
+

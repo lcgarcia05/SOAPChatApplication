@@ -1,0 +1,65 @@
+<xs:schema xmlns:tns="http://com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://com/" version="1.0">
+
+  <xs:element name="factorial" type="tns:factorial"/>
+
+  <xs:element name="factorialResponse" type="tns:factorialResponse"/>
+
+  <xs:element name="fib" type="tns:fib"/>
+
+  <xs:element name="fibResponse" type="tns:fibResponse"/>
+
+  <xs:element name="findPrime" type="tns:findPrime"/>
+
+  <xs:element name="findPrimeResponse" type="tns:findPrimeResponse"/>
+
+  <xs:element name="test" type="tns:test"/>
+
+  <xs:element name="testResponse" type="tns:testResponse"/>
+
+  <xs:complexType name="factorial">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="factorialResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fib">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fibResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="test">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findPrime">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findPrimeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

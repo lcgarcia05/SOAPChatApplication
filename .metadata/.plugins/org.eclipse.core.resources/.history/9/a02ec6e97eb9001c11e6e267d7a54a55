@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ChatServerImplService" targetNamespace="http://com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://com/" schemaLocation="chatserverimpl_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="test">
+    <wsdl:part name="parameters" element="tns:test">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="testResponse">
+    <wsdl:part name="parameters" element="tns:testResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ChatServer">
+    <wsdl:operation name="test">
+      <wsdl:input name="test" message="tns:test">
+    </wsdl:input>
+      <wsdl:output name="testResponse" message="tns:testResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChatServerImplServiceSoapBinding" type="tns:ChatServer">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="test">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChatServerImplService">
+    <wsdl:port name="ChatServerImplPort" binding="tns:ChatServerImplServiceSoapBinding">
+      <soap:address location="http://localhost:8081/ChatService/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

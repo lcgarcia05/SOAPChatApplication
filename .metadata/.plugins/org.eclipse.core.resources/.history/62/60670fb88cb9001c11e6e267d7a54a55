@@ -1,0 +1,33 @@
+<xs:schema xmlns:tns="http://com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://com/" version="1.0">
+
+  <xs:element name="mergeSort" type="tns:mergeSort"/>
+
+  <xs:element name="mergeSortResponse" type="tns:mergeSortResponse"/>
+
+  <xs:element name="test" type="tns:test"/>
+
+  <xs:element name="testResponse" type="tns:testResponse"/>
+
+  <xs:complexType name="mergeSort">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mergeSortResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="test">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="testResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>

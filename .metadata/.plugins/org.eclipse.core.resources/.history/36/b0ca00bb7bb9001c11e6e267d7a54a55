@@ -1,0 +1,55 @@
+package com;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebResult;
+import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+
+@WebService(targetNamespace = "http://com/", portName = "ChatServerImplPort", serviceName = "ChatServerImplService")
+public class ChatServerImpl implements ChatServer{
+
+	@WebMethod(operationName = "test", action = "urn:Test")
+	@Override
+	public void test(String name) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int[] mergeSort(int[] arr) {
+        int n = a.length;
+        if (n == 1) {
+            return a;
+        }
+
+        int[] left = Arrays.copyOfRange(a, 0, n / 2);
+        int[] right = Arrays.copyOfRange(a, n / 2, n);
+        left = my_mergesort(left);
+        right = my_mergesort(right); 
+	
+        int[] arr = new int[left.length + right.length];
+        int l = 0, r = 0, i = 0;
+       	
+		while (true){ 
+			if (l < left.length && r < right.length) {
+			    if (left[l] <= right[r]) {
+				arr[i++] = left[l++];
+			    } else {
+				arr[i++] = right[r++];
+			    }
+			}
+			else if (l < left.length)
+			    arr[i++] = left[l++];	
+			else if (r < right.length)
+			    arr[i++] = right[r++];
+			else
+			    break;
+		}
+        return arr;
+	}
+
+}
