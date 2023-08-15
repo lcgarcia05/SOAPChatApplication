@@ -1,3 +1,3 @@
 # 436A4-last
 
-CMPT 436 Assignment 4
+Chat Application implented using a SOAP Service
